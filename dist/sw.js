@@ -1,7 +1,7 @@
 /* Service Worker — Mebel Ilham Jati Solo
    Offline-first for the static app shell. */
 
-const CACHE = "ijs-shell-v2";
+const CACHE = "ijs-shell-v3";
 
 /* Core static files that never get hashed (served from public/). */
 const STATIC_ASSETS = [
@@ -9,10 +9,8 @@ const STATIC_ASSETS = [
   "./index.html",
   "./manifest.json",
   "./sw.js",
-  "./assets/logo.svg",
-  "./assets/icon-192.png",
-  "./assets/icon-512.png",
-  "./assets/icon-maskable.png"
+  "./assets/cropped_circle_image_(2).png",
+  "./assets/cropped_circle_image_(2) copy.png"
 ];
 
 self.addEventListener("install", (event) => {
