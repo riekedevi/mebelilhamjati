@@ -1,45 +1,58 @@
 /* ============================================================
-   Mebel Ilham Jati Solo — App logic
+   Meubel Ilham Jati Solo — App logic
    ============================================================ */
 
-import { services, icons, WHATSAPP_NUMBER } from "./data.js";
+import { furnitureItems, visitServices, visitSteps, gallery, WHATSAPP_NUMBER } from "./data.js";
 
-/* ---------- Render Layanan ---------- */
-const serviceList = document.getElementById("serviceList");
-serviceList.innerHTML = services.map(s => `
-  <article class="svc-card">
-    <div class="svc-icon"><svg viewBox="0 0 24 24" aria-hidden="true">${icons[s.icon] || ""}</svg></div>
-    <div class="svc-body">
-      <h3>${s.title}</h3>
-      <p>${s.desc}</p>
-      <span class="svc-price">${s.price}</span>
+/* ---------- Render Furniture Items ---------- */
+const furnitureEl = document.getElementById("furnitureItems");
+if (furnitureEl) {
+  furnitureEl.innerHTML = furnitureItems.map(item => `<span>${item}</span>`).join("");
+}
+
+/* ---------- Render Visit Service Items ---------- */
+const visitEl = document.getElementById("visitItems");
+if (visitEl) {
+  visitEl.innerHTML = visitServices.map(item => `<span>${item}</span>`).join("");
+}
+
+/* ---------- Render Flow Steps ---------- */
+const flowEl = document.getElementById("flowSteps");
+if (flowEl) {
+  flowEl.innerHTML = visitSteps.map(step => `
+    <div class="flow-step">
+      <div class="flow-num">${step.num}</div>
+      <div class="flow-body">
+        <h3>${step.title}</h3>
+        <p>${step.desc}</p>
+      </div>
     </div>
-  </article>
-`).join("");
+  `).join("");
+}
 
-/* ---------- Booking → WhatsApp ---------- */
-const bookingForm = document.getElementById("bookingForm");
-bookingForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const data = new FormData(bookingForm);
-  const nama = data.get("nama");
-  const wa = data.get("whatsapp");
-  const jenis = data.get("jenis");
-  const tanggal = data.get("tanggal");
-  const detail = data.get("detail");
+/* ---------- Render Gallery ---------- */
+const galleryEl = document.getElementById("galleryGrid");
+if (galleryEl) {
+  galleryEl.innerHTML = gallery.map(g => `
+    <div class="gallery-item">
+      <img src="${g.img}" alt="${g.alt}" loading="lazy" onerror="this.style.opacity=0.15" />
+    </div>
+  `).join("");
+}
 
-  const tgl = tanggal ? new Date(tanggal).toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" }) : "-";
+/* ---------- WhatsApp Links ---------- */
+function waLink(message) {
+  const text = `Halo Meubel Ilham Jati Solo, saya ingin ${message}.`;
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+}
 
-  const pesan =
-    `Halo Mebel Ilham Jati Solo, saya ingin booking konsultasi.\n\n` +
-    `*Nama:* ${nama}\n` +
-    `*No. WhatsApp:* ${wa}\n` +
-    `*Jenis Mebel:* ${jenis}\n` +
-    `*Tanggal diinginkan:* ${tgl}\n` +
-    `*Detail:* ${detail || "-"}`;
-  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(pesan)}`;
-  window.open(url, "_blank");
-  showToast("Mengarahkan ke WhatsApp...");
+document.querySelectorAll("[data-wa]").forEach(el => {
+  el.addEventListener("click", (e) => {
+    e.preventDefault();
+    const msg = el.getAttribute("data-wa");
+    window.open(waLink(msg), "_blank");
+    showToast("Mengarahkan ke WhatsApp...");
+  });
 });
 
 /* ---------- Toast ---------- */
