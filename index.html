@@ -37,11 +37,11 @@
             <h1>Pembuatan Furniture Mebel<br />&amp; Visit Service</h1>
             <p class="hero-lede">Melayani pembuatan furniture sesuai kebutuhan serta jasa service furniture dengan kunjungan langsung ke rumah atau kost.</p>
             <div class="hero-actions">
-              <a class="btn btn-primary" href="#" data-wa="Pesan Furniture" rel="noopener">
+              <a class="btn btn-primary" href="#pesan" rel="noopener">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v6H4z"/><path d="M6 13v6m12-6v6M4 7V4h16v3"/></svg>
                 Pesan Furniture
               </a>
-              <a class="btn btn-outline" href="#" data-wa="Panggil Visit Service">
+              <a class="btn btn-outline" href="#pesan">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l18-8-8 18-2-7-8-3z"/></svg>
                 Panggil Visit Service
               </a>
@@ -66,7 +66,7 @@
             </div>
             <p>Melayani pembuatan berbagai furniture sesuai kebutuhan, ukuran, model, dan permintaan pelanggan.</p>
             <div class="item-grid" id="furnitureItems"></div>
-            <a class="btn btn-primary btn-sm" href="#" data-wa="Konsultasi Furniture">Konsultasi Furniture</a>
+            <a class="btn btn-primary btn-sm" href="#pesan">Mulai Pesanan</a>
           </article>
 
           <article class="service-card service-card--visit">
@@ -82,8 +82,127 @@
               <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
               <span>Tidak perlu membawa furniture ke tempat kami. Teknisi dapat datang langsung ke rumah atau kost untuk melakukan pengecekan dan service.</span>
             </div>
-            <a class="btn btn-primary btn-sm" href="#" data-wa="Booking Visit Service">Booking Visit Service</a>
+            <a class="btn btn-primary btn-sm" href="#pesan">Booking Visit</a>
           </article>
+        </section>
+
+        <!-- PILIH LAYANAN + FORM -->
+        <section class="section pesan-section" id="pesan" data-section="pesan">
+          <div class="section-heading">
+            <span class="kicker">Pilih Layanan</span>
+            <h2>Mulai Pesanan</h2>
+          </div>
+
+          <div class="service-pick">
+            <button class="pick-card pick-card--build" data-form="build" type="button">
+              <div class="pick-icon pick-icon--build">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-6 9 6v11H3z"/><path d="M9 20v-6h6v6"/><path d="M3 9h18"/></svg>
+              </div>
+              <div class="pick-body">
+                <h3>Pembuatan Furniture</h3>
+                <p>Buat furniture sesuai kebutuhan dan ukuran kamu.</p>
+                <span class="pick-cta">Mulai Pesanan →</span>
+              </div>
+            </button>
+
+            <button class="pick-card pick-card--visit" data-form="visit" type="button">
+              <div class="pick-icon pick-icon--visit">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+              </div>
+              <div class="pick-body">
+                <h3>Visit Service</h3>
+                <p>Panggil teknisi untuk service furniture ke rumah atau kost.</p>
+                <span class="pick-cta">Booking Visit →</span>
+              </div>
+            </button>
+          </div>
+
+          <!-- FORM PEMBUATAN FURNITURE -->
+          <div class="form-wrap" id="formBuild" hidden>
+            <div class="form-header">
+              <h3>Pembuatan Furniture Custom</h3>
+              <p>Ceritakan furniture yang ingin kamu buat. Kami akan membantu menyesuaikan kebutuhan, ukuran, model, dan detail pengerjaannya.</p>
+              <button class="form-close" type="button" aria-label="Tutup form" data-close="formBuild">×</button>
+            </div>
+            <form class="order-form" id="buildForm">
+              <label class="fld">Nama<input name="nama" type="text" placeholder="Nama Anda" required /></label>
+              <label class="fld">Nomor WhatsApp<input name="wa" type="tel" placeholder="08xx-xxxx-xxxx" required /></label>
+              <label class="fld">Jenis Furniture
+                <select name="jenis" required><option value="" disabled selected>Pilih jenis furniture</option></select>
+              </label>
+              <label class="fld">Jumlah<input name="jumlah" type="number" min="1" value="1" required /></label>
+              <fieldset class="fld">
+                <legend>Ukuran Furniture</legend>
+                <div class="dim-row">
+                  <label>Panjang (cm)<input name="panjang" type="number" placeholder="0" /></label>
+                  <label>Lebar (cm)<input name="lebar" type="number" placeholder="0" /></label>
+                  <label>Tinggi (cm)<input name="tinggi" type="number" placeholder="0" /></label>
+                </div>
+                <label class="chk"><input type="checkbox" name="ukuran_konsultasi" /> Belum tahu / ingin konsultasi</label>
+              </fieldset>
+              <label class="fld">Model / Desain — Upload foto referensi
+                <input name="referensi" type="file" accept="image/*" multiple />
+                <span class="file-hint">Bisa upload beberapa foto. Foto dikirim manual via WhatsApp setelah form dibuka.</span>
+              </label>
+              <label class="fld">Material / Bahan
+                <select name="material" required></select>
+              </label>
+              <label class="fld">Warna / Finishing<input name="warna" type="text" placeholder="Contoh: natural, walnut, putih dof..." /></label>
+              <fieldset class="fld">
+                <legend>Lokasi Pengiriman / Pemasangan</legend>
+                <label>Alamat<input name="alamat" type="text" placeholder="Alamat lengkap" /></label>
+                <label>Kecamatan<input name="kecamatan" type="text" placeholder="Kecamatan" /></label>
+                <label>Kota / Kabupaten<input name="kota" type="text" placeholder="Kota / Kabupaten" /></label>
+              </fieldset>
+              <label class="fld">Catatan Tambahan<textarea name="catatan" rows="3" placeholder="Detail tambahan, referensi, atau permintaan khusus"></textarea></label>
+              <label class="fld">Estimasi Budget
+                <select name="budget" required></select>
+              </label>
+              <p class="form-disclaimer">Harga akhir disesuaikan dengan ukuran, material, desain, finishing, jumlah, dan tingkat kesulitan pengerjaan.</p>
+              <button class="btn btn-primary form-submit" type="submit">Kirim Pesanan via WhatsApp →</button>
+            </form>
+          </div>
+
+          <!-- FORM VISIT SERVICE -->
+          <div class="form-wrap" id="formVisit" hidden>
+            <div class="form-header">
+              <h3>Visit Service Rumah / Kost</h3>
+              <p>Furniture rusak atau bermasalah? Kirim detailnya dan jadwalkan kunjungan teknisi ke lokasi kamu.</p>
+              <button class="form-close" type="button" aria-label="Tutup form" data-close="formVisit">×</button>
+            </div>
+            <form class="order-form" id="visitForm">
+              <label class="fld">Nama<input name="nama" type="text" placeholder="Nama Anda" required /></label>
+              <label class="fld">Nomor WhatsApp<input name="wa" type="tel" placeholder="08xx-xxxx-xxxx" required /></label>
+              <label class="fld">Jenis Furniture
+                <select name="jenis" required><option value="" disabled selected>Pilih jenis furniture</option></select>
+              </label>
+              <fieldset class="fld">
+                <legend>Jenis Kerusakan / Service <span class="req">(pilih satu atau lebih)</span></legend>
+                <div class="chk-grid" id="damageOptions"></div>
+              </fieldset>
+              <label class="fld">Upload Foto / Video Kerusakan
+                <input name="kerusakan_foto" type="file" accept="image/*,video/*" multiple required />
+                <span class="file-hint">Wajib minimal 1 foto. Foto/video dikirim manual via WhatsApp setelah form dibuka.</span>
+              </label>
+              <p class="file-help">Foto/video membantu kami melakukan pengecekan awal dan memberikan estimasi sebelum kunjungan.</p>
+              <fieldset class="fld">
+                <legend>Lokasi Service</legend>
+                <label>Alamat lengkap<input name="alamat" type="text" placeholder="Alamat lengkap" required /></label>
+                <label>Nama kost / rumah (jika perlu)<input name="nama_lokasi" type="text" placeholder="Contoh: Kost Putri Melati" /></label>
+                <label>Kecamatan<input name="kecamatan" type="text" placeholder="Kecamatan" required /></label>
+                <label>Kota / Kabupaten<input name="kota" type="text" placeholder="Kota / Kabupaten" required /></label>
+              </fieldset>
+              <fieldset class="fld">
+                <legend>Pilih Waktu Kunjungan</legend>
+                <label>Tanggal yang diinginkan<input name="tanggal" type="date" required /></label>
+                <label>Jam yang diinginkan<input name="jam" type="time" required /></label>
+                <span class="file-help">Jadwal akan dikonfirmasi oleh admin.</span>
+              </fieldset>
+              <label class="fld">Catatan<textarea name="catatan" rows="3" placeholder="Jelaskan kondisi furniture"></textarea></label>
+              <p class="form-disclaimer">Jadwal kunjungan dan biaya service dapat berubah sesuai hasil pengecekan kondisi furniture di lokasi.</p>
+              <button class="btn btn-primary form-submit" type="submit">Booking Visit Service via WhatsApp →</button>
+            </form>
+          </div>
         </section>
 
         <!-- VALUE PROPOSITION -->
@@ -137,6 +256,7 @@
       <nav class="bottom-nav" aria-label="Navigasi utama">
         <a href="#beranda" data-nav="beranda"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 10 8-6 8 6v9H4zM9 19v-5h6v5" /></svg><span>Beranda</span></a>
         <a href="#layanan" data-nav="layanan"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-6 9 6v11H3z"/><path d="M9 20v-6h6v6"/></svg><span>Layanan</span></a>
+        <a href="#pesan" data-nav="pesan"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>Pesan</span></a>
         <a href="#alur" data-nav="alur"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4m8-4v4M4 10h16" /></svg><span>Alur</span></a>
         <a href="#galeri" data-nav="galeri"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg><span>Galeri</span></a>
       </nav>

@@ -22,6 +22,49 @@ export const visitServices = [
   "Re-finishing Furniture", "Survey & Cek Kerusakan"
 ];
 
+/* Form Pembuatan Furniture — dropdown jenis */
+export const buildFurnitureTypes = [
+  "Meja", "Kursi", "Lemari", "Tempat Tidur", "Meja Makan",
+  "Bufet", "Rak", "Laci", "Wardrobe", "Furniture Custom Lainnya"
+];
+
+/* Form Pembuatan Furniture — dropdown material */
+export const buildMaterials = [
+  "Belum tahu / konsultasi terlebih dahulu",
+  "Jati Solid", "Mahoni", "MDF / HPL", "Multiwood", "Kayu Kamper", "Lainnya"
+];
+
+/* Form Pembuatan Furniture — dropdown budget */
+export const buildBudgets = [
+  "< Rp1.000.000",
+  "Rp1.000.000 - Rp3.000.000",
+  "Rp3.000.000 - Rp5.000.000",
+  "> Rp5.000.000",
+  "Belum menentukan"
+];
+
+/* Form Visit Service — dropdown jenis furniture */
+export const visitFurnitureTypes = [
+  "Lemari", "Meja", "Kursi", "Tempat Tidur",
+  "Laci", "Rak", "Bufet", "Furniture Lainnya"
+];
+
+/* Form Visit Service — pilihan kerusakan (multi-select) */
+export const visitDamageOptions = [
+  "Furniture goyang / longgar",
+  "Engsel rusak",
+  "Rel laci bermasalah",
+  "Pintu furniture bermasalah",
+  "Sambungan lepas",
+  "Kaki furniture rusak",
+  "Perlu bongkar & pasang",
+  "Perlu perbaikan furniture",
+  "Perlu setting / penyesuaian",
+  "Perlu perawatan",
+  "Perlu re-finishing",
+  "Belum tahu / minta dicek teknisi"
+];
+
 /* Alur booking visit service */
 export const visitSteps = [
   { num: "01", title: "Kirim Foto", desc: "Kirim foto atau video furniture yang ingin diperbaiki melalui WhatsApp." },
