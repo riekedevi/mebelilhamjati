@@ -1,0 +1,33 @@
+{
+  "name": "Mebel Ilham Jati Solo",
+  "short_name": "Ilham Jati",
+  "description": "Mebel jati custom sesuai ukuran ruangan Anda. Basis di Solo, Jawa Tengah.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#2E6DA4",
+  "background_color": "#FFFFFF",
+  "lang": "id",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "assets/cropped_circle_image_(2).png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/cropped_circle_image_(2).png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/cropped_circle_image_(2).png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
