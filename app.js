@@ -1,5 +1,5 @@
 /* ============================================================
-   Meubel Ilham Jati Solo — App logic
+   Mebel Ilham Jati Solo — App logic
    ============================================================ */
 
 import { furnitureItems, visitServices, visitSteps, gallery, WHATSAPP_NUMBER } from "./data.js";
@@ -42,7 +42,7 @@ if (galleryEl) {
 
 /* ---------- WhatsApp Links ---------- */
 function waLink(message) {
-  const text = `Halo Meubel Ilham Jati Solo, saya ingin ${message}.`;
+  const text = `Halo Mebel Ilham Jati Solo, saya ingin ${message}.`;
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 }
 

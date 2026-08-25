@@ -1,28 +1,28 @@
 /* ============================================================
-   Meubel Ilham Jati Solo — Mobile-first PWA
+   Mebel Ilham Jati Solo — Mobile-first PWA
    Clean, modern, sans-serif · Plus Jakarta Sans
    ============================================================ */
 
 :root {
   --bg: #ffffff;
-  --surface-soft: #f0f5f3;
-  --surface-softer: #f7fafa;
-  --ink: #16261f;
-  --ink-soft: #3a4a42;
-  --ink-mute: #6b7b73;
-  --accent: #0f4d3a;
-  --accent-deep: #0a3a2c;
-  --accent-light: #e3f0ec;
-  --line: #d9e4df;
-  --line-soft: #e8f0ec;
-  --cta: #0f4d3a;
-  --cta-hover: #0a3a2c;
-  --visit: #b9761f;
-  --visit-soft: #fbf0e0;
+  --surface-soft: #eaf3fb;
+  --surface-softer: #f4f8fc;
+  --ink: #14385c;
+  --ink-soft: #3d5a75;
+  --ink-mute: #6b8199;
+  --accent: #2e6da4;
+  --accent-deep: #1f4e7a;
+  --accent-light: #e3eef8;
+  --line: #d3e6f5;
+  --line-soft: #e6f0f9;
+  --cta: #2e6da4;
+  --cta-hover: #1f4e7a;
+  --visit: #b07d46;
+  --visit-soft: #f7efe4;
   --radius: 16px;
   --radius-sm: 10px;
-  --shadow: 0 4px 20px -8px rgba(16, 38, 31, 0.12);
-  --shadow-lg: 0 12px 40px -12px rgba(16, 38, 31, 0.2);
+  --shadow: 0 4px 20px -8px rgba(20, 56, 92, 0.12);
+  --shadow-lg: 0 12px 40px -12px rgba(20, 56, 92, 0.2);
   --font: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 
@@ -31,7 +31,7 @@ html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
   font-family: var(--font);
   color: var(--ink);
-  background: #eef2f0;
+  background: #eef4f9;
   min-height: 100vh;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -46,7 +46,7 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
-  box-shadow: 0 0 60px -20px rgba(16, 38, 31, 0.18);
+  box-shadow: 0 0 60px -20px rgba(20, 56, 92, 0.18);
   padding-bottom: 80px;
 }
 
@@ -134,7 +134,7 @@ body {
   text-align: center;
 }
 .btn svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
-.btn-primary { background: var(--cta); color: #fff; box-shadow: 0 8px 22px -10px rgba(15,77,58,0.6); }
+.btn-primary { background: var(--cta); color: #fff; box-shadow: 0 8px 22px -10px rgba(46,109,164,0.6); }
 .btn-primary:active { transform: scale(0.98); background: var(--cta-hover); }
 .btn-outline { background: #fff; color: var(--accent-deep); border-color: var(--line); }
 .btn-outline:active { transform: scale(0.98); background: var(--surface-soft); }
@@ -149,7 +149,7 @@ body {
   padding: 24px 20px;
   margin-bottom: 16px;
 }
-.service-card--visit { background: var(--visit-soft); border-color: #f0dab8; }
+.service-card--visit { background: var(--visit-soft); border-color: #e6d5bd; }
 .service-card-head { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
 .service-icon {
   flex-shrink: 0; width: 48px; height: 48px;
@@ -158,7 +158,7 @@ body {
 }
 .service-icon--build { background: var(--accent-light); }
 .service-icon--build svg { width: 26px; height: 26px; fill: none; stroke: var(--accent); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-.service-icon--visit { background: #f5e2c4; }
+.service-icon--visit { background: #f0e0cc; }
 .service-icon--visit svg { width: 26px; height: 26px; fill: none; stroke: var(--visit); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .service-card h3 { font-size: 18px; font-weight: 700; color: var(--ink); line-height: 1.3; }
 .service-card > p { font-size: 14px; color: var(--ink-soft); margin-bottom: 16px; }
@@ -175,12 +175,12 @@ body {
   border-radius: 999px;
   color: var(--ink-soft);
 }
-.item-grid--visit span { border-color: #f0dab8; }
+.item-grid--visit span { border-color: #e6d5bd; }
 
 .visit-note {
   display: flex; gap: 10px; align-items: flex-start;
   background: #fff;
-  border: 1px solid #f0dab8;
+  border: 1px solid #e6d5bd;
   border-radius: var(--radius-sm);
   padding: 14px;
   margin-top: 16px;
@@ -192,10 +192,10 @@ body {
 .value-section { background: var(--accent); padding: 44px 22px; }
 .value-box { text-align: center; }
 .value-box h2 { font-size: 24px; font-weight: 800; color: #fff; line-height: 1.3; letter-spacing: -0.02em; }
-.value-lead { margin-top: 14px; font-size: 15px; color: rgba(255,255,255,0.85); line-height: 1.6; }
+.value-lead { margin-top: 14px; font-size: 15px; color: rgba(255,255,255,0.88); line-height: 1.6; }
 .value-strong { margin-top: 12px; font-size: 15px; font-weight: 700; color: #fff; line-height: 1.6; }
 .value-box .btn { margin-top: 24px; background: #fff; color: var(--accent-deep); }
-.value-box .btn:active { background: #f0f5f3; }
+.value-box .btn:active { background: var(--surface-soft); }
 
 /* ---- Flow Steps ---- */
 .flow-section { background: var(--surface-soft); }

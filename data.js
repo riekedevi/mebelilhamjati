@@ -1,5 +1,5 @@
 /* ============================================================
-   Meubel Ilham Jati Solo — Data
+   Mebel Ilham Jati Solo — Data
    ============================================================ */
 
 export const WHATSAPP_NUMBER = "6285865702681";
