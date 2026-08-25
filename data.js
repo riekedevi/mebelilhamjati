@@ -70,7 +70,7 @@ export const visitSteps = [
   { num: "01", title: "Kirim Foto", desc: "Kirim foto atau video furniture yang ingin diperbaiki melalui WhatsApp." },
   { num: "02", title: "Konsultasi", desc: "Tim melakukan pengecekan awal dan memberikan estimasi." },
   { num: "03", title: "Tentukan Jadwal", desc: "Pilih waktu kunjungan yang tersedia." },
-  { num: "04", title: "Teknisi Datang", desc: "Teknisi datang langsung ke rumah atau kost untuk melakukan pengecekan dan service." }
+  { num: "04", title: "Teknisi Datang", desc: "Teknisi datang langsung ke rumah, kost, cafe, atau tempat-tempat lain di Solo Raya untuk melakukan pengecekan dan service." }
 ];
 
 /* Galeri hasil pekerjaan */
